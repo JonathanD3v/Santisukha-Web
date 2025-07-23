@@ -1,0 +1,70 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/images/logo/logo1.webp";
+
+export default function Header() {
+  return (
+    <header className="w-full fixed top-0 left-0 z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
+      <div className="max-w-[1200px] mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-14 h-14 object-contain cursor-pointer rounded-lg shadow-lg"
+          />
+          <span className="text-white text-lg font-semibold tracking-wide">
+            Sasana Byatti
+          </span>
+        </div>
+
+        {/* Navigation */}
+        <nav className="hidden md:flex space-x-6 items-center">
+          <Link
+            to="/about"
+            className="text-gray-200 hover:text-yellow-400 transition"
+          >
+            About
+          </Link>
+          <Link
+            to="/events"
+            className="text-gray-200 hover:text-yellow-400 transition"
+          >
+            Events
+          </Link>
+          <Link
+            to="/contact"
+            className="text-gray-200 hover:text-yellow-400 transition"
+          >
+            Contact
+          </Link>
+          <Link
+            to="/donate"
+            className="ml-4 py-2 px-4 bg-yellow-500 hover:bg-yellow-400 text-white font-medium rounded-lg shadow transition"
+          >
+            Donate
+          </Link>
+        </nav>
+
+        {/* Mobile Hamburger */}
+        <div className="md:hidden">
+          <button className="text-white">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
