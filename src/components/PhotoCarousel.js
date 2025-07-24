@@ -48,8 +48,8 @@ export default function PhotoCarousel() {
 
   return (
     <div
-      className="relative max-w-[1200px] mx-auto px-6 py-16
-        backdrop-blur-sm bg-white/10 rounded-2xl border border-white/20 shadow-lg"
+      className="relative max-w-[1400px] mx-auto px-6 py-16
+        backdrop-blur-sm bg-white/10 rounded-2xl border border-white/20 shadow-lg mb-12"
     >
       {/* Blurred background */}
       <div

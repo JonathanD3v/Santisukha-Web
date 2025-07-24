@@ -23,8 +23,9 @@ export default function Home() {
     >
       <Header />
       <Welcome />
-      <AyeNyingCe />
       <OfferMore />
+
+      <AyeNyingCe />
       <AboutUs />
       <PhotoCarousel />
       <Offer />
