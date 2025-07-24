@@ -10,6 +10,7 @@ import PhotoCarousel from "./PhotoCarousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OfferMore from "./OfferMore";
+import AyeNyingCe from "./AyeNyingCe";
 
 export default function Home() {
   return (
@@ -22,11 +23,12 @@ export default function Home() {
     >
       <Header />
       <Welcome />
+      <AyeNyingCe />
       <OfferMore />
       <AboutUs />
       <PhotoCarousel />
       <Offer />
-      <Experience />
+      {/* <Experience /> */}
       <Footer />
     </div>
   );

@@ -14,31 +14,27 @@ export default function Footer() {
         </div>
 
         {/* Column 2: Quick Links */}
-        {/* <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+        {/* Column 2: Contact Info */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Contact</h3>
           <ul className="space-y-2 text-sm text-white/80">
             <li>
-              <a href="#about" className="hover:text-yellow-400 transition">
-                About
+              Phone:{" "}
+              <a href="#" className="hover:text-yellow-400 transition">
+                062-23125
               </a>
             </li>
             <li>
-              <a href="#events" className="hover:text-yellow-400 transition">
-                Events
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-yellow-400 transition">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="#donate" className="hover:text-yellow-400 transition">
-                Donate
+              Email:{" "}
+              <a
+                href="mailto:santisukha152002"
+                className="hover:text-yellow-400 transition"
+              >
+                santisukha152002
               </a>
             </li>
           </ul>
-        </div> */}
+        </div>
 
         {/* Column 3: Social */}
         <div>
@@ -66,7 +62,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-yellow-400/50 text-center text-sm py-4 bg-yellow-700/60 rounded-b-xl text-white/90">
-        © 2025 PKOC. All Rights Reserved.
+        <p>© {new Date().getFullYear()} Sasana Byatti. All rights reserved.</p>
       </div>
     </footer>
   );
