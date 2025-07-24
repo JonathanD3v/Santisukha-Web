@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-yellow-600/30 backdrop-blur-md border-t border-yellow-400/40 shadow-md rounded-t-xl text-white">
-      <div className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-[1200px] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: About */}
         <div>
           <h3 className="text-lg font-semibold mb-4">About Us</h3>
@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-yellow-400/50 text-center text-sm py-4 bg-yellow-700/60 rounded-b-xl text-white/90">
+      <div className="border-t border-yellow-400/50 text-center text-sm py-2 bg-yellow-700/60 rounded-b-xl text-white/90">
         <p>© {new Date().getFullYear()} Sasana Byatti. All rights reserved.</p>
       </div>
     </footer>
