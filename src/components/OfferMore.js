@@ -51,7 +51,7 @@ export default function OfferMore() {
             These heartfelt ceremonies are part of our journey to cultivate
             merit, loving-kindness, and unity within the community. The video
             below shares glimpses of these sacred occasions and cherished
-            memories at our Burmese Buddhist monastery.
+            memories at our monastery.
           </p>
         </div>
 
