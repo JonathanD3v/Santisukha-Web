@@ -16,7 +16,7 @@ export default function Header() {
             className="w-14 h-14 object-contain cursor-pointer rounded-lg shadow-lg"
           />
           <span className="text-white text-lg font-semibold tracking-wide">
-            Sasana Byatti
+            Sasana Byatti Santisukha (Parahita) Monastery
           </span>
         </div>
 
