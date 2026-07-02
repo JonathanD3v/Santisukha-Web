@@ -21,7 +21,7 @@ export default function Footer() {
             <li>
               Phone:{" "}
               <a href="#" className="hover:text-yellow-400 transition">
-                062-23125
+                09-401509091
               </a>
             </li>
             <li>
