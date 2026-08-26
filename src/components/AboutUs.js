@@ -9,7 +9,7 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-transparent py-20">
+    <div id="about" className="min-h-screen bg-transparent py-20">
       <div
         className="max-w-[95%] lg:max-w-[1080px] mx-auto px-6 py-12 backdrop-blur-sm bg-white/10 rounded-2xl border border-white/20 text-center transition-all duration-1000"
         style={{

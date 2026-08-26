@@ -33,7 +33,7 @@ export default function OfferMore() {
   const selectedCard = cards.find((card) => card.id === show);
 
   return (
-    <div className="bg-green-50">
+    <div id="events" className="bg-green-50">
       <div className="max-w-[95%] lg:max-w-[1080px] mx-auto py-12">
         {/* Header line */}
         <div className="flex items-center gap-3 mb-3">

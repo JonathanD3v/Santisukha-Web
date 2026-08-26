@@ -2,25 +2,33 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-yellow-600/30 backdrop-blur-md border-t border-yellow-400/40 shadow-md rounded-t-xl text-white">
-      <div className="max-w-[1200px] mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Column 1: About */}
+    <footer
+      id="contact"
+      className="bg-[#1c140d]/90 backdrop-blur-md border-t border-yellow-400/20 shadow-[0_-10px_30px_rgba(0,0,0,0.25)] text-white"
+    >
+      <div className="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-lg font-semibold mb-4">About Us</h3>
-          <p className="text-sm text-white/90">
+          <h3 className="text-lg font-semibold mb-4 text-yellow-300">
+            About Us
+          </h3>
+          <p className="text-sm leading-relaxed text-white/85">
             PKOC (Parami Knowledge Offering Center) is dedicated to spreading
-            the Dhamma and supporting the community in Pakokku, Myanmar.
+            wisdom, supporting education, and uplifting the community in
+            Pakokku, Myanmar.
           </p>
         </div>
 
-        {/* Column 2: Quick Links */}
-        {/* Column 2: Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
+          <h3 className="text-lg font-semibold mb-4 text-yellow-300">
+            Contact
+          </h3>
           <ul className="space-y-2 text-sm text-white/80">
             <li>
               Phone:{" "}
-              <a href="#" className="hover:text-yellow-400 transition">
+              <a
+                href="tel:09401509091"
+                className="hover:text-yellow-400 transition"
+              >
                 09-401509091
               </a>
             </li>
@@ -33,13 +41,15 @@ export default function Footer() {
                 santisukha152002
               </a>
             </li>
+            <li>Location: Pakokku, Myanmar</li>
           </ul>
         </div>
 
-        {/* Column 3: Social */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-          <div className="flex space-x-4 text-white/80">
+          <h3 className="text-lg font-semibold mb-4 text-yellow-300">
+            Follow Us
+          </h3>
+          <div className="flex flex-wrap gap-4 text-sm text-white/80">
             <a
               href="https://www.facebook.com/profile.php?id=61578704758939"
               className="hover:text-yellow-400 transition"
@@ -60,8 +70,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-yellow-400/50 text-center text-sm py-2 bg-yellow-700/60 rounded-b-xl text-white/90">
+      <div className="border-t border-yellow-400/20 text-center text-sm py-3 bg-yellow-700/25 text-white/90">
         <p>© {new Date().getFullYear()} Sasana Byatti. All rights reserved.</p>
       </div>
     </footer>
