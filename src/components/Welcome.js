@@ -4,104 +4,222 @@ export default function Welcome() {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setAnimate(true), 100);
+    const timeout = setTimeout(() => {
+      setAnimate(true);
+    }, 100);
+
     return () => clearTimeout(timeout);
   }, []);
 
-  const stats = ["Since 2005", "Free education", "Community support"];
+  const scrollToAyeNyingCe = () => {
+    const section = document.getElementById("aye-nying-ce");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const stats = [
+    {
+      value: "2005",
+      label: "Since",
+    },
+    {
+      value: "Free",
+      label: "Education",
+    },
+    {
+      value: "Community",
+      label: "Support",
+    },
+  ];
 
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-16">
-      <div className="max-w-[1200px] mx-auto w-[95%] lg:w-[1080px]">
+    <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-24">
+      {/* =====================================================
+          BACKGROUND ELEMENTS
+      ====================================================== */}
+
+      {/* Large Background Text */}
+      <div
+        className="pointer-events-none absolute bottom-[-20px] left-1/2 -translate-x-1/2 select-none"
+        aria-hidden="true"
+      >
+        <span className="whitespace-nowrap text-[150px] font-bold tracking-[-0.08em] text-white/[0.025] sm:text-[220px] md:text-[320px] lg:text-[430px]">
+          PARAMI
+        </span>
+      </div>
+
+      {/* Main Ambient Glow */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-500/[0.045] blur-[140px]"
+        aria-hidden="true"
+      />
+
+      {/* Small Gold Glow */}
+      <div
+        className="pointer-events-none absolute right-[-150px] top-[20%] h-[300px] w-[300px] rounded-full bg-yellow-600/[0.025] blur-[120px]"
+        aria-hidden="true"
+      />
+
+      {/* =====================================================
+          CONTENT
+      ====================================================== */}
+      <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
+        {/* ---------------------------------------------
+            TOP LABEL
+        ---------------------------------------------- */}
         <div
-          className={`grid lg:grid-cols-[1.3fr_0.7fr] gap-8 items-center transition-all duration-1000 ${
-            animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`flex items-center gap-4 transition-all duration-1000 ${
+            animate
+              ? "translate-y-0 opacity-100"
+              : "translate-y-5 opacity-0"
           }`}
         >
-          <div className="backdrop-blur-md bg-white/10 border border-white/15 rounded-[28px] p-7 md:p-10 shadow-2xl shadow-black/20">
-            <span className="inline-flex items-center rounded-full border border-yellow-300/40 bg-yellow-400/10 px-3 py-1 text-xs md:text-sm font-medium tracking-[0.18em] text-yellow-200 uppercase">
-              Parami Knowledge Offering Center
+          <span className="h-px w-10 bg-yellow-500/60 sm:w-14" />
+
+          <span className="text-[9px] font-medium uppercase tracking-[0.45em] text-yellow-500/80 sm:text-xs">
+            Parami Knowledge Offering Center
+          </span>
+        </div>
+
+        {/* ---------------------------------------------
+            HERO
+        ---------------------------------------------- */}
+        <div className="mt-10 max-w-5xl sm:mt-14 lg:mt-16">
+          <h1
+            className={`text-5xl font-light leading-[0.95] tracking-[-0.055em] text-[#f5f1e8] transition-all duration-[1200ms] ease-out sm:text-6xl md:text-7xl lg:text-[90px] xl:text-[105px] ${
+              animate
+                ? "translate-y-0 opacity-100"
+                : "translate-y-12 opacity-0"
+            }`}
+          >
+            Nurturing minds.
+            <br />
+
+            <span className="font-serif italic text-yellow-400/90">
+              Serving
+            </span>{" "}
+            the community.
+          </h1>
+        </div>
+
+        {/* ---------------------------------------------
+            DESCRIPTION
+        ---------------------------------------------- */}
+        <div
+          className={`mt-10 max-w-2xl transition-all duration-1000 ${
+            animate
+              ? "translate-y-0 opacity-100"
+              : "translate-y-8 opacity-0"
+          }`}
+          style={{
+            transitionDelay: "250ms",
+          }}
+        >
+          <p className="text-base leading-7 text-white/55 sm:text-lg sm:leading-8">
+            We are dedicated to offering{" "}
+            <span className="text-white/85">free education</span>,
+            compassionate learning, and spiritual guidance to everyone,
+            creating opportunities for a brighter future in{" "}
+            <span className="font-serif italic text-white/80">
+              Pakokku, Myanmar
             </span>
+            .
+          </p>
+        </div>
 
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-white">
-              Nurturing minds.
-              <span className="block font-semibold text-yellow-400">
-                Serving the community.
-              </span>
-            </h1>
+        {/* ---------------------------------------------
+            CTA
+        ---------------------------------------------- */}
+        <div
+          className={`mt-10 transition-all duration-1000 ${
+            animate
+              ? "translate-y-0 opacity-100"
+              : "translate-y-8 opacity-0"
+          }`}
+          style={{
+            transitionDelay: "400ms",
+          }}
+        >
+          <button
+            onClick={scrollToAyeNyingCe}
+            className="group inline-flex items-center gap-5 text-xs font-medium uppercase tracking-[0.3em] text-white transition-colors duration-300 hover:text-yellow-400"
+          >
+            <span>Explore More</span>
 
-            <p className="mt-5 max-w-xl text-base md:text-lg text-gray-200 leading-relaxed">
-              We are dedicated to offering free education, compassionate
-              learning, and spiritual guidance to everyone, with our monastery
-              located in Pakokku, Myanmar.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <button
-                onClick={() => {
-                  window.scrollTo({
-                    top: 950,
-                    behavior: "smooth",
-                  });
-                }}
-                className="py-3 px-6 bg-yellow-500 hover:bg-yellow-400 text-white font-medium rounded-full transition duration-300 shadow-lg shadow-yellow-700/30"
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 transition-all duration-500 group-hover:border-yellow-500/60 group-hover:bg-yellow-500/5">
+              <svg
+                className="h-4 w-4 transition-transform duration-500 group-hover:translate-y-1"
+                viewBox="0 0 20 20"
+                fill="none"
               >
-                Explore More
-              </button>
-              {/* <button
-                onClick={() => {
-                  window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: "smooth",
-                  });
-                }}
-                className="py-3 px-6 border border-white/30 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full transition duration-300"
+                <path
+                  d="M10 4V16M5 11L10 16L15 11"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        {/* ---------------------------------------------
+            STATS
+        ---------------------------------------------- */}
+        <div
+          className={`mt-20 max-w-3xl border-y border-white/[0.08] transition-all duration-1000 sm:mt-28 ${
+            animate
+              ? "translate-y-0 opacity-100"
+              : "translate-y-8 opacity-0"
+          }`}
+          style={{
+            transitionDelay: "550ms",
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-3 sm:divide-x sm:divide-white/[0.08]">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={`px-5 py-7 sm:px-6 sm:py-8 ${
+                  index !== 0
+                    ? "border-t border-white/[0.08] sm:border-t-0"
+                    : ""
+                }`}
               >
-                Donate Now
-              </button> */}
-            </div>
+                <p className="text-xl font-light tracking-tight text-white sm:text-2xl">
+                  {stat.value}
+                </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {stats.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/15 bg-black/15 px-3 py-2 text-xs md:text-sm text-gray-100"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="backdrop-blur-md bg-[#f8f2e7]/90 border border-yellow-200/60 rounded-[28px] p-6 md:p-8 shadow-2xl text-[#2c1f15]">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-yellow-700">
-              Our mission
-            </p>
-            <h2 className="mt-4 text-2xl md:text-3xl font-semibold leading-snug">
-              Empowering students through education, compassion, and wisdom.
-            </h2>
-            <p className="mt-4 text-sm md:text-base leading-relaxed text-[#4a3527]">
-              Sasana Byatti Santisukha Parahita Monastery has been guiding young
-              minds with kindness, discipline, and opportunity since 2005.
-            </p>
-
-            <div className="mt-6 space-y-4">
-              <div className="rounded-2xl bg-[#f3e7cf] p-4 border border-yellow-200/60">
-                <div className="text-2xl font-bold text-yellow-800">2005</div>
-                <div className="text-sm text-[#5b4334]">
-                  Founded with a vision for learning and service
-                </div>
+                <p className="mt-2 text-[9px] uppercase tracking-[0.3em] text-white/30 sm:text-[10px]">
+                  {stat.label}
+                </p>
               </div>
-              <div className="rounded-2xl bg-[#fffaf1] p-4 border border-yellow-200/60">
-                <div className="text-2xl font-bold text-yellow-800">
-                  Hundreds
-                </div>
-                <div className="text-sm text-[#5b4334]">
-                  Students guided by volunteer teachers and mentors
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* ---------------------------------------------
+            SCROLL INDICATOR
+        ---------------------------------------------- */}
+        <div
+          className={`absolute bottom-8 right-6 hidden flex-col items-center gap-3 transition-all duration-1000 sm:right-8 lg:flex ${
+            animate ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            transitionDelay: "1000ms",
+          }}
+        >
+          <span className="text-[9px] uppercase tracking-[0.4em] text-white/25 [writing-mode:vertical-rl]">
+            Scroll to explore
+          </span>
+
+          <div className="h-12 w-px bg-gradient-to-b from-yellow-500/60 to-transparent" />
         </div>
       </div>
     </section>
